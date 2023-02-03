@@ -11,7 +11,6 @@
 </head>
 <body>
 
-  
   <div id="left">
 
     <div id="info_reseau">
@@ -22,13 +21,17 @@
 
     </div>
 
+    <a href="index.html">
+
     <div class="left_button">
 
       Home Page
       
     </div>
+  
+    </a>
 
-    <div class="left_button">
+    <div id="left_make_a_post" class="left_button">
 
       New Post
       
@@ -71,7 +74,7 @@
 
       </div>
 
-      <div class="mid_action">
+      <div id="mid_action_post_maker" class="mid_action">
 
         Make A Post
 
@@ -79,16 +82,44 @@
     
     </div>
 
-    <form>
+    <form id="post_maker" class="hidden"> 
 
       <div>
 
         <textarea placeholder="150 caractères max. . ." maxlength="150" name="post" id="post_txt" cols="30" rows="50"></textarea>
         
       </div>
-      <div>
-        <input id="submit" type="submit" value="Envoyer">
+
+      <div class="post_actions_container">
+
+        <div>
+
+          <select name="tag_selector" id="tag_selector">
+
+            <option value=""> Select a tag</option>
+            <option class="tag1" value="tag1"> HTML </option>
+            <option class="tag2" value="tag2"> CSS </option>
+            <option class="tag3" value="tag3"> JS </option>
+            <option class="tag4" value="tag4"> VsCode </option>
+            <option class="tag5" value="tag5"> PhP </option>
+            <option class="tag6" value="tag6"> MySQL </option>
+            <option class="tag7" value="tag7"> Ruby </option>
+            <option class="tag8" value="tag8"> Python </option>
+            <option class="tag9" value="tag9"> Memes </option>
+            <option class="tag10" value="tag10"> Misc </option>
+
+          </select>
+
+        </div>
+
+        <div>
+
+          <input id="submit" type="submit" value="Envoyer">
+
+        </div>
+
       </div>
+
     </form>
 
       <div class="post_container">
@@ -122,7 +153,7 @@
 
             </div>
 
-            <img src="" alt="poubelle">
+            <img class="poubelle" src="img/pbl.png" alt="poubelle">
 
           </div>
 
@@ -157,11 +188,52 @@
 
           </div>
 
-          <img src="" alt="poubelle">
+          <img class="poubelle" src="img/pbl.png" alt="poubelle">
 
         </div>
 
     </div>
+
+    <div class="horizontal_bar"></div>
+
+        <div class="post">
+
+          <div class="post_user_info">
+
+            <img class="profile_picture" src="img/pp_trois.png" alt="photo de profil">
+            <p class="username"> Vroom_Vroom_La_Voiture </p>
+
+          </div>
+
+          <div class="post_bar">
+
+          </div>
+
+          <div class="post_content">
+
+            <p> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsum expedita dolore enim esse optio, omnis similique quas consequuntur dignissimos nulla totam iure repudiandae fugiat assumenda dolor at est minima illum. </p>
+
+          </div>
+
+          <div class="post_end">
+
+            <div class="tag_post tag1">
+
+              #Ruby
+
+            </div>
+
+            <img class="poubelle" src="img/pbl.png" alt="poubelle">
+
+          </div>
+
+      </div>
+
+    </div>
+
+    <div>
+
+      <img id="post_button" src="img/make_a_post.png" alt="fait un post">
 
     </div>
 
@@ -178,67 +250,67 @@
     <div class="between_tag_bar"></div>
 
     <div class="tag1 tag">
-      Tag1
+      HTML
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag2 tag">
-      Tag2
+      CSS
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag3 tag">
-      Tag3
+      JavaScript
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag4 tag">
-      Tag4
+      VsCode
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag5 tag">
-      Tag5
+      PhP
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag6 tag">
-      Tag6
+      MySQL
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag7 tag">
-      Tag7
+      Ruby
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag8 tag">
-      Tag8
+      Python
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag9 tag">
-      Tag9
+      Memes
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="tag10 tag">
-      Tag10
+      Misc
     </div>
 
     <div class="between_tag_bar"></div>
 
     <div class="all_tag">
-      Tag all
+      Clear All
     </div>
 
   </div>
