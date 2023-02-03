@@ -72,6 +72,10 @@ a:link, a:visited {
   text-decoration: none;
 }
 
+#tag_selector{
+  width: 20vw;
+  height: 3vh;
+}
 
 .left_button{
   border-radius: 80px;
@@ -92,6 +96,12 @@ a:link, a:visited {
   justify-content: center;
   align-items: center;
   border-bottom: 2px solid #E09ECE;
+}
+
+.post_actions_container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .post_container{
@@ -208,6 +218,11 @@ a:link, a:visited {
 
 }
 
+.poubelle{
+  height: 4.5vh;
+  width: 3vw;
+}
+
 .settings_color{
   height: var(--settings_button_height);
   width: var(--settings_button_width);
@@ -235,4 +250,28 @@ a:link, a:visited {
   border-style: none;
   background: transparent;
   color: white;
+}
+
+#tag_selector{
+  background-color: #131313;
+  color: white;
+  border-left: 2px;
+  border-top: 2px;
+  border-color: #E09ECE ;
+}
+
+
+.hidden{
+  visibility:collapse;
+  height: 0;
+  width: 0;
+}
+
+#post_button{
+  height: 13vh;
+  width: 8vw;
+  border-radius: 100%;
+  position: fixed;
+  left: 70vw;
+  bottom: 20px;
 }
