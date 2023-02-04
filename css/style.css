@@ -5,7 +5,8 @@
 }
 
 :root{
-  --border_size : 19.8vw;
+  --side_size : 19.8vw;
+  --border_size : 0.2vw;
   --settings_button_width : 15vw;
   --settings_button_height : 12vh;
 }
@@ -13,23 +14,27 @@
 body{
   padding: 0;
   margin: 0;
-  display: grid;
   color: white;
   background-color: #131313;
-  grid-template-columns: var(--border_size) 0.2vw 60vw 0.2vw var(--border_size);
 }
 
 
 
 #left{
   height: 100vh;
-  width: var(--border_size);
+  width: var(--side_size);
   background-color: #131313;
   display: grid;
   grid-template-rows: repeat(7, 14vh);
   justify-items: center;
   align-items: center;
   align-content: space-between;
+  position: fixed;
+  left: 0;
+  border: solid #09E4E6;
+  border-left: var(--border_size);
+  border-top: var(--border_size);
+  border-bottom: var(--border_size);
 }
 
 
@@ -40,6 +45,8 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  left: 20vw;
 }
 
 #right{
@@ -50,6 +57,13 @@ body{
   flex-direction: column;
   justify-content: center;
   justify-content: space-around;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border: solid #09E4E6;
+  border-right: var(--border_size);
+  border-top: var(--border_size);
+  border-bottom: var(--border_size);
 }
 
 #info_reseau{
@@ -64,9 +78,6 @@ body{
   justify-content: space-evenly;
 }
 
-.vertical_bar{
-  background-color: #09E4E6;
-}
 
 a:link, a:visited {
   text-decoration: none;
@@ -104,7 +115,7 @@ a:link, a:visited {
   justify-content: space-between;
 }
 
-.post_container{
+#post_container{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -117,6 +128,12 @@ a:link, a:visited {
 }
 
 .post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post_info{
   height: fit-content;
   width: fit-content;
   margin-left: 2.5vw;
@@ -148,7 +165,7 @@ a:link, a:visited {
 }
 
 .horizontal_bar{
-  width: 54vw;
+  width: 55vw;
   margin-top: 3vh;
   margin-bottom: 3vh;
   height: 0.3vh;
@@ -156,14 +173,14 @@ a:link, a:visited {
 }
 
 .between_tag_bar{
-  width: var(--border_size);
+  width: var(--side_size);
   height: 0.2vh;
   background-color: #E09ECE;
 }
 
-.tag, .tag_name, .all_tag{
+.tag, .tag_name, #all_tag{
   height: 8.15vh;
-  width: var(--border_size);
+  width: var(--side_size);
   display: flex;
   align-items: center;
   justify-content: center;
