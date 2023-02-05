@@ -81,6 +81,7 @@ const createPost = () => {
   let html_post = post_container.innerHTML
   html_post = post + html_post
   post_container.innerHTML = html_post
+  update_poubelle_call()
 }
 
 const clearTags = () =>{
@@ -105,15 +106,23 @@ tag_selector.addEventListener('change',() =>{
 })
 
 const deletePost = (element) =>{
+  console.log("coucou")
   element.srcElement.parentElement.parentElement.parentElement.remove()
 }
 
 
+const update_poubelle_call = () =>{
+  for (let i = 0; i < li_poubelle.length ; i++){
+    console.log(i)
+    li_poubelle[i].addEventListener('click', deletePost)
+  }
+}
 
 mid_post_maker.addEventListener('click',showMakePost)
 submit.addEventListener('click', createPost)
 clear.addEventListener('click', clearTags)
 for (let i = 0; i < li_poubelle.length ; i++){
+  console.log(i)
   li_poubelle[i].addEventListener('click', deletePost)
 }
 for (let i = 0; i < li_tag.length ; i++){
