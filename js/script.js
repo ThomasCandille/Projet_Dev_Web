@@ -1,6 +1,7 @@
 const li_tag = document.getElementsByClassName("tag")
 const li_post = document.getElementsByClassName("post")
 const li_tag_post = document.getElementsByClassName("tag_post")
+const li_poubelle = document.getElementsByClassName("poubelle")
 const button_post = document.getElementById("post_button")
 const mid_post_maker = document.getElementById("mid_action_post_maker")
 const left_make_a_post = document.getElementById("left_make_a_post")
@@ -17,6 +18,7 @@ let active_post = []
 
 
 console.log("all good")
+console.log(li_post)
 messageStockage = localStorage
 
 txt_post.value = localStorage.getItem("text")
@@ -102,20 +104,18 @@ tag_selector.addEventListener('change',() =>{
 
 })
 
-
+const deletePost = (element) =>{
+  element.srcElement.parentElement.parentElement.parentElement.remove()
+}
 
 
 
 mid_post_maker.addEventListener('click',showMakePost)
 submit.addEventListener('click', createPost)
 clear.addEventListener('click', clearTags)
-li_tag[0].addEventListener('click',checkTag)
-li_tag[1].addEventListener('click',checkTag)
-li_tag[3].addEventListener('click',checkTag)
-li_tag[2].addEventListener('click',checkTag)
-li_tag[4].addEventListener('click',checkTag)
-li_tag[5].addEventListener('click',checkTag)    
-li_tag[6].addEventListener('click',checkTag)
-li_tag[7].addEventListener('click',checkTag)
-li_tag[8].addEventListener('click',checkTag)
-li_tag[9].addEventListener('click',checkTag)
+for (let i = 0; i < li_poubelle.length ; i++){
+  li_poubelle[i].addEventListener('click', deletePost)
+}
+for (let i = 0; i < li_tag.length ; i++){
+  li_tag[i].addEventListener('click', checkTag)
+}
