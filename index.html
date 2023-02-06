@@ -5,7 +5,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/script.js"></script>
   <title>Document</title>
 
 </head>
@@ -13,7 +12,10 @@
 
   <div id="left">
 
-    <div id="info_reseau">
+    <div id="info_user">
+      
+      <img id="icon_pp" src="img/pp_un.png" alt="pp">
+      <p id="user_username">xXUserXx</p>
       
     </div>
 
@@ -52,21 +54,24 @@
 
     </div>
 
+    <a href="account.html">
     <div class="left_button">
 
       connect
       
     </div>
-
+    </a>
+    
   </div>
 
   
 
   <div id="mid">
 
+
     <div id="mid_action_container">
 
-      <div class="mid_action">
+      <div id="home_page_button" class="mid_action">
 
         Home Page
 
@@ -82,7 +87,7 @@
 
     <form id="post_maker" class="hidden"> 
 
-      <div>
+      <div id="container_post_txt">
 
         <textarea placeholder="Ecrire ici" name="post" id="post_txt" cols="30" rows="50"></textarea>
         
@@ -110,6 +115,12 @@
 
         </div>
 
+        <div id="annuler">
+
+          annuler
+
+        </div>
+
         <div id="submit">
 
           envoyer
@@ -131,7 +142,7 @@
           <div class="post_user_info">
 
             <img class="profile_picture" src="img/pp_deux.png" alt="photo de profil">
-            <p class="username"> Quent_Overwacth_nevr_die </p>
+            <p class="username"> Usern4me </p>
 
           </div>
 
@@ -172,7 +183,7 @@
         <div class="post_user_info">
 
           <img class="profile_picture" src="img/pp_un.png" alt="photo de profil">
-          <p class="username"> MAXIBGDELAStreetSISIcMOI </p>
+          <p class="username"> xXUserXx </p>
 
         </div>
 
@@ -211,7 +222,7 @@
       <div class="post_user_info">
 
         <img class="profile_picture" src="img/pp_trois.png" alt="photo de profil">
-        <p class="username"> VROUM LA VOITUUUUUURE qui fait fffuuuuUUUU </p>
+        <p class="username"> Tommahs_ </p>
 
       </div>
 
@@ -248,6 +259,12 @@
     <div>
 
       <img id="post_button" src="img/make_a_post.png" alt="fait un post">
+
+    </div>
+
+    <div>
+
+      <img id="mobile_menu" src="img/Hamburger_icon.svg.png" alt="sandwich menu">
 
     </div>
 
@@ -327,6 +344,6 @@
 
   </div>
 
-
+  <script src="js/script.js"></script>
 </body>
 </html>
