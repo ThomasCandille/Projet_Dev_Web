@@ -2,7 +2,8 @@ const li_tag = document.getElementsByClassName("tag")
 const li_post = document.getElementsByClassName("post")
 const li_tag_post = document.getElementsByClassName("tag_post")
 const li_poubelle = document.getElementsByClassName("poubelle")
-const button_post = document.getElementById("post_button")
+const post_button = document.getElementById("post_button")
+const annuler = document.getElementById("annuler")
 const mid_post_maker = document.getElementById("mid_action_post_maker")
 const left_make_a_post = document.getElementById("left_make_a_post")
 const post_maker = document.getElementById("post_maker")
@@ -11,14 +12,17 @@ const tag_selector = document.getElementById("tag_selector")
 const submit = document.getElementById("submit")
 const clear = document.getElementById("all_tag")
 const post_container = document.getElementById("post_container")
-
+const icon_pp = document.getElementById("icon_pp")
+const user_username = document.getElementById("user_username")
+const mobile_menu = document.getElementById("mobile_menu")
+const left = document.getElementById("left")
 
 let active_tag = []
 let active_post = []
 
 
 console.log("all good")
-console.log(li_post)
+console.log(user_username)
 messageStockage = localStorage
 
 txt_post.value = localStorage.getItem("text")
@@ -27,11 +31,14 @@ tag_selector.selectedIndex = localStorage.getItem("tag")
 const showMakePost =() =>{
   post_maker.classList.remove("hidden")
 }
+const hideMakePost=() =>{
+  post_maker.classList.add("hidden")
+}
 
 const checkTag =(event) =>{
   let el = event.target
   if (el.style.backgroundColor === ""){   
-    el.style.backgroundColor = "#00ff00"
+    el.style.backgroundColor = "#00aa00"
     active_tag.push(el.classList[0])
   }
 
@@ -57,30 +64,36 @@ const createPost = () => {
   localStorage.removeItem("tag")
   txt_post.value = ""
   tag_selector.value = ""
-  let post = `<div class="post">
-  <div class="post_info">
-  <div class="post_user_info">
-    <img class="profile_picture" src="img/pp_deux.png" alt="photo de profil">
-    <p class="username"> Quent_Overwacth_nevr_die </p>
-  </div>
-  <div class="post_bar">
-  </div>
-  <div class="post_content">
-    <p> ${txt} </p>
-  </div>
-  <div class="post_end">
-    <div class="tag_post ${li_tag[tag-1].classList[0]}">
-      ${li_tag[tag-1].innerHTML}
+  if(txt != "" && tag != null){
+    let post = `<div class="post">
+    <div class="post_info">
+    <div class="post_user_info">
+      <img class="profile_picture" src="${icon_pp.src}" alt="photo de profil">
+      <p class="username"> ${user_username.innerText} </p>
     </div>
-    <img class="poubelle" src="img/pbl.png" alt="poubelle">
-  </div>
-  </div>
-  <div class="horizontal_bar"></div>
-  </div>
-  `
-  let html_post = post_container.innerHTML
-  html_post = post + html_post
-  post_container.innerHTML = html_post
+    <div class="post_bar">
+    </div>
+    <div class="post_content">
+      <p> ${txt} </p>
+    </div>
+    <div class="post_end">
+      <div class="tag_post ${li_tag[tag-1].classList[0]}">
+        ${li_tag[tag-1].innerHTML}
+      </div>
+      <img class="poubelle" src="img/pbl.png" alt="poubelle">
+    </div>
+    </div>
+    <div class="horizontal_bar"></div>
+    </div>
+    `
+    let html_post = post_container.innerHTML
+    html_post = post + html_post
+    post_container.innerHTML = html_post
+    post_maker.classList.add("hidden")
+  }
+  else{
+    alert("veuillez entrer un text ou un tag valide")
+  }
   update_poubelle_call()
 }
 
@@ -118,9 +131,17 @@ const update_poubelle_call = () =>{
   }
 }
 
+const showLeft = () => {
+  left.style.display= "flex"
+}
+
 mid_post_maker.addEventListener('click',showMakePost)
+post_button.addEventListener('click', showMakePost)
+left_make_a_post.addEventListener('click',showMakePost)
+annuler.addEventListener('click', hideMakePost)
 submit.addEventListener('click', createPost)
 clear.addEventListener('click', clearTags)
+mobile_menu.addEventListener('click',showLeft)
 for (let i = 0; i < li_poubelle.length ; i++){
   console.log(i)
   li_poubelle[i].addEventListener('click', deletePost)
