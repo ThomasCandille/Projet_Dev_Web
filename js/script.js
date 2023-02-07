@@ -16,6 +16,10 @@ const icon_pp = document.getElementById("icon_pp")
 const user_username = document.getElementById("user_username")
 const mobile_menu = document.getElementById("mobile_menu")
 const left = document.getElementById("left")
+const verif_suppr = document.getElementById("verif_suppr")
+const suppr_oui = document.getElementById("suppr_oui")
+const suppr_non = document.getElementById("suppr_non")
+
 
 let active_tag = []
 let active_post = []
@@ -119,8 +123,16 @@ tag_selector.addEventListener('change',() =>{
 })
 
 const deletePost = (element) =>{
-  console.log("coucou")
-  element.srcElement.parentElement.parentElement.parentElement.remove()
+  console.log(element)
+  verif_suppr.classList.remove("hidden")
+  suppr_non.addEventListener('click',event=>{
+    verif_suppr.classList.add("hidden")
+  })
+  suppr_oui.addEventListener('click', event=>{
+    element.srcElement.parentElement.parentElement.parentElement.remove()
+    verif_suppr.classList.add("hidden")
+  })
+  
 }
 
 
